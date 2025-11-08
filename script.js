@@ -19,5 +19,5 @@ document.getElementById('surpriseBtn').addEventListener('click', () => {
   for (let i = 0; i < 80; i++) {
     createConfetti();
   }
-  alert('🎂 Surprise! Happy Birthday Vaishnavi! 💖🎈');
+  alert('🎂 Surprise! Happy 9Th Birthday Vaishnavi! 💖🎈');
 });
