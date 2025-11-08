@@ -1,128 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Vaishnavi!</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #ffd6e7, #fff0f5);
-      color: #ff69b4;
-      font-family: "Poppins", sans-serif;
-      text-align: center;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
-      to { text-shadow: 0 0 30px #ff1493, 0 0 50px #ff69b4; }
-    }
-
-    .name {
-      color: black; /* Vaishnavi in black */
-      font-weight: bold;
-    }
-
-    button {
-      background-color: #fff;
-      color: #ff69b4;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1.2rem;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ff69b4;
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Vaishnavi 🎂</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🎉 Wishing our dear baby <span class="name">Vaishnavi</span> a Very Happy Happy Birthday 🎂</h1>
-  <button id="playButton">🎵 Play Music</button>
-  <canvas id="confettiCanvas"></canvas>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_31d91d4a6c.mp3?filename=happy-birthday-2-21298.mp3" type="audio/mpeg" />
+  </audio>
 
-  <audio id="birthdayMusic" src="happy-birthday.mp3"></audio>
+  <div class="container">
+    <h1>🎉 Wishing our dear baby <span class="name">Vaishnavi</span> 🎉</h1>
+    <h2>💖 A very Happy Happy Birthday! 💖</h2>
+    <p class="love">You make every moment brighter and every heart happier!</p>
 
-  <script>
-    const button = document.getElementById("playButton");
-    const music = document.getElementById("birthdayMusic");
-    const canvas = document.getElementById("confettiCanvas");
-    const ctx = canvas.getContext("2d");
-    let confetti = [];
+    <!-- Photo Frame -->
+    <div class="photo-frame">
+      <img src="your-photo.jpg" alt="Vaishnavi's photo" />
+      <div class="sparkle"></div>
+    </div>
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    <button id="surpriseBtn">🎁 Click for a Surprise!</button>
 
-    function createConfetti() {
-      const colors = ["#ff69b4", "#ff1493", "#ffc0cb", "#ffffff", "#ffb6c1"];
-      for (let i = 0; i < 100; i++) {
-        confetti.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height - canvas.height,
-          r: Math.random() * 6 + 2,
-          d: Math.random() * 0.5 + 0.5,
-          color: colors[Math.floor(Math.random() * colors.length)],
-        });
-      }
-    }
+    <div class="balloon-container">
+      <div class="balloon pink"></div>
+      <div class="balloon yellow"></div>
+      <div class="balloon blue"></div>
+      <div class="balloon green"></div>
+    </div>
+  </div>
 
-    function drawConfetti() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      confetti.forEach((c) => {
-        ctx.beginPath();
-        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2, false);
-        ctx.fillStyle = c.color;
-        ctx.fill();
-      });
-      moveConfetti();
-    }
+  <footer>
+    <p>Made with 💖 for our sweet Vaishnavi 🎀</p>
+  </footer>
 
-    function moveConfetti() {
-      confetti.forEach((c) => {
-        c.y += c.d * 3;
-        if (c.y > canvas.height) c.y = -10;
-      });
-    }
-
-    function animate() {
-      drawConfetti();
-      requestAnimationFrame(animate);
-    }
-
-    button.addEventListener("click", () => {
-      music.play();
-      createConfetti();
-      animate();
-      button.innerText = "🎶 Enjoy the Party!";
-      button.disabled = true;
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
