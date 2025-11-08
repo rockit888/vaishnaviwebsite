@@ -1,7 +1,8 @@
-// Confetti animation 🎊
+// 🎉 Confetti colors
 const colors = ['#ff6fb0', '#ffcc70', '#70e1f5', '#d4fc79', '#ffa3a3'];
 const body = document.body;
 
+// 🎊 Create falling confetti
 function createConfetti() {
   const confetti = document.createElement('div');
   confetti.classList.add('confetti');
@@ -11,4 +12,12 @@ function createConfetti() {
   body.appendChild(confetti);
   setTimeout(() => confetti.remove(), 5000);
 }
-setInterval(createConfetti, 150);
+setInterval(createConfetti, 200);
+
+// 🎁 Surprise click — burst confetti
+document.getElementById('surpriseBtn').addEventListener('click', () => {
+  for (let i = 0; i < 80; i++) {
+    createConfetti();
+  }
+  alert('🎂 Surprise! Happy Birthday Vaishnavi! 💖🎈');
+});
