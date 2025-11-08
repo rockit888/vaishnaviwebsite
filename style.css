@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  top: 35%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin-top: 10px;
+}
+
+.name {
+  color: #ff6fb0;
+  font-family: 'Pacifico', cursive;
+}
+
+.love {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Balloons */
+.balloon-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -150px;
+  animation: float 6s ease-in infinite;
+}
+
+.pink { background: #ff6fb0; left: 20%; animation-delay: 0s; }
+.yellow { background: #ffcc70; left: 40%; animation-delay: 2s; }
+.blue { background: #70e1f5; left: 60%; animation-delay: 4s; }
+.green { background: #d4fc79; left: 80%; animation-delay: 6s; }
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.7);
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-700px); opacity: 0; }
+}
+
+/* Confetti from JS */
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
