@@ -20,4 +20,5 @@ document.getElementById('surpriseBtn').addEventListener('click', () => {
     createConfetti();
   }
   alert('🎂 Surprise!  Happy 9Th Birthday Vaishnavi! 💖🎈');
+  alert('🎂 Surprise!  Enjoy today  and always! 💖🎈');
 });
