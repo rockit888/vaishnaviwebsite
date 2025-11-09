@@ -20,5 +20,8 @@ document.getElementById('surpriseBtn').addEventListener('click', () => {
     createConfetti();
   }
   alert('🎂 Surprise!  Happy 9Th Birthday Vaishnavi! 💖🎈');
-  alert('🎂 Surprise!  Enjoy today  and always! 💖🎈');
+  alert('🎂 Enjoy today  and always! 💖🎈');
+  alert('🎂 your sweet words bicha, chaketu, tha, daddy pappa, baku , va , ja , egg, ishia , babithicha  and many more ..');
+  alert('🎂 Love you so so so much .. i wowwu  💖🎈');
+  
 });
